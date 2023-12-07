@@ -18,7 +18,7 @@ function Connect({sendProvider, sendWallet}) {
             await verifyNetwork();
 
             const provider = await new quais.providers.Web3Provider(window.ethereum);
-            await provider.send("eth_requestAccounts", []).then((accounts) => {
+            await provider.send("quai_requestAccounts", []).then((accounts) => {
                 let first = accounts[0].slice(0, 5)
                 let last = accounts[0].slice(-5)
                 setAccount(first + "..." + last);
