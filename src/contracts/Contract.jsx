@@ -1,4 +1,3 @@
-import { ethers } from "ethers";
 import {RAFFLE_ADDRESS} from "../constants/address.js";
 import {RAFFLE_ABI} from "../constants/abi.js";
 import { quais } from "quais";

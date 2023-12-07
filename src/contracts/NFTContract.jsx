@@ -1,4 +1,3 @@
-import { ethers } from "ethers";
 import {NFT_ADDRESS} from "../constants/address.js";
 import {NFT_ABI} from "../constants/abi.js";
 import { quais } from "quais";

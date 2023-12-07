@@ -6,7 +6,6 @@ import Buyers from './components/Buyers';
 import {Contract} from './contracts/Contract';
 import { quais } from "quais";
 import { NFTContract } from './contracts/NFTContract';
-
 import RaffleNFT from './images/RaffleNFT.png'
 import bayc from './images/bayc.png'
 import bayc2 from './images/bayc2.jpg'
@@ -136,9 +135,10 @@ function App() {
     const userTicketCount = await raffleContract?.entryCounts(signer.getAddress());
     const userTicketCountValue = await quais.utils.formatEther(userTicketCount)
     const userTicketCountValueA = await userTicketCountValue * 10**18
-    console.log(ticketCost)
+    const ticketMaxValue = await ticketMax;
+    const buyCount = await Math.floor(userTicketCountValueA + ticketValue)
 
-    if ((Number(userTicketCountValueA) + Number(ticketValue)) <= 5) {
+    if ((buyCount < ticketMaxValue) || (buyCount == ticketMaxValue)) {
       let value_ = await quais.utils.parseEther(`${ticketCost * ticketValue}`)
       try {
         const txn = await raffleContract.buyTicket(ticketValue, { value: value_ });
