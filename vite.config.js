@@ -9,7 +9,8 @@ export default defineConfig({
       // To exclude specific polyfills, add them to this list.
       exclude: [
         'fs', // Excludes the polyfill for `fs` and `node:fs`.
-        'http'
+        'http',
+        'node_modules/@quais/contracts/lib.esm/index.js'
       ],
       // Whether to polyfill specific globals.
       globals: {
