@@ -161,14 +161,16 @@ function App() {
     console.log(txn)
   }
 
-  const showNFTOwner = async () => {
+  const showNFTOwner = async (event) => {
+    event.preventDefault();
     const nftNumber = await showNFTID
     await console.log(nftNumber)
     const response = await nftContract.ownerOf(nftNumber);
     await console.log(response)
   }
 
-  const beginRaffle = async () => {
+  const beginRaffle = async (event) => {
+    event.preventDefault();
     const NFT = await raffleNFTAddress;
     const nftID = await raffleNFTID;
     console.log(NFT, nftID)
