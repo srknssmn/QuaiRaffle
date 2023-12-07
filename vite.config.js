@@ -10,7 +10,7 @@ export default defineConfig({
       exclude: [
         'fs', // Excludes the polyfill for `fs` and `node:fs`.
         'http',
-        'node_modules/@quais/contracts/lib.esm/index.js'
+        '/vercel/path0/node_modules/@quais/contracts/lib.esm/index.js:21:9'
       ],
       // Whether to polyfill specific globals.
       globals: {
